@@ -14,6 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 ########################################################################
 # IMPORT GUI FILE
+sys.path.insert(0, './ui_src')
 from ui_interface import *
 ########################################################################
 
