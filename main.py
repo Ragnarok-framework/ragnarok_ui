@@ -89,7 +89,7 @@ class MainWindow(QtWidgets.QMainWindow):
                 # Move window only when window is normal size
                 # ###############################################
                 #if left mouse button is clicked (Only accept left mouse button clicks)
-                if e.buttons() == QtGui.Qt.LeftButton:
+                if e.buttons() == QtCore.Qt.LeftButton:
                     #Move window
                     self.move(self.pos() + e.globalPos() - self.clickPosition)
                     self.clickPosition = e.globalPos()
