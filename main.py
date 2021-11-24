@@ -50,27 +50,33 @@ class MainWindow(QtWidgets.QMainWindow):
         self.setWindowIcon(QtGui.QIcon(":/icons/icons/github.svg"))
         # Set window tittle
         self.setWindowTitle("RAGNAROK")
-
         #################################################################################
         # Window Size grip to resize window
         #################################################################################
         QtWidgets.QSizeGrip(self.ui.size_grip)
 
         #######################################################################
+
         #Minimize window
         self.ui.minimize_window_button.clicked.connect(lambda: self.showMinimized())
         #######################################################################
+
         #Close window
         self.ui.close_window_button.clicked.connect(lambda: self.close())
         self.ui.exit_button.clicked.connect(lambda: self.close())
-
-
         #######################################################################
+
         #Restore/Maximize window
         self.ui.restore_window_button.clicked.connect(lambda: self.restore_or_maximize_window())
-
-
+        ###############################################
+        # Adding Hyperlink
+        self.ui.pushButton_10.clicked.connect(lambda: self.link("https://github.com/Ragnarok-framework/ragnarok_ui"))
+        self.ui.pushButton_11.clicked.connect(lambda: self.link("https://github.com/Ragnarok-framework/ragnarok_probes"))
+        self.ui.pushButton_12.clicked.connect(lambda: self.link("https://github.com/Ragnarok-framework"))
+        self.ui.pushButton_13.clicked.connect(lambda: self.link("https://wiki.python.org/moin/PyQt"))
+        self.ui.pushButton_14.clicked.connect(lambda: self.link("https://pypi.org/project/PlugyPy/"))
         # ###############################################
+        
         # Function to Move window on mouse drag event on the tittle bar
         # ###############################################
         def moveWindow(e):
@@ -106,7 +112,7 @@ class MainWindow(QtWidgets.QMainWindow):
     ########################################################################
     def link(self, linkStr):
         # Open an url
-        QtGui.QDesktopServices.openUrl(QUrl(linkStr))
+        QtGui.QDesktopServices.openUrl(QtCore.QUrl(linkStr))
 
 
     ########################################################################
