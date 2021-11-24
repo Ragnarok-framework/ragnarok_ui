@@ -197,8 +197,8 @@ QToolBox::tab {
                  <rect>
                   <x>0</x>
                   <y>0</y>
-                  <width>196</width>
-                  <height>269</height>
+                  <width>146</width>
+                  <height>48</height>
                  </rect>
                 </property>
                 <property name="cursor">
@@ -881,7 +881,7 @@ QToolBox::tab {
              <property name="frameShadow">
               <enum>QFrame::Raised</enum>
              </property>
-             <widget class="QPushButton" name="pushButton">
+             <widget class="QPushButton" name="report_gen_button">
               <property name="geometry">
                <rect>
                 <x>0</x>

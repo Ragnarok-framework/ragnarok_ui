@@ -75,8 +75,9 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.pushButton_12.clicked.connect(lambda: self.link("https://github.com/Ragnarok-framework"))
         self.ui.pushButton_13.clicked.connect(lambda: self.link("https://wiki.python.org/moin/PyQt"))
         self.ui.pushButton_14.clicked.connect(lambda: self.link("https://pypi.org/project/PlugyPy/"))
+        self.ui.report_gen_button.clicked.connect(lambda: self.link("http://localhost:8000/report.html"))
         # ###############################################
-        
+
         # Function to Move window on mouse drag event on the tittle bar
         # ###############################################
         def moveWindow(e):
