@@ -1,12 +1,18 @@
 import sys
 import os
+import json
 from PySide2 import *
 from PyQt5 import QtCore, QtGui, QtWidgets
-
 ########################################################################
-# IMPORT GUI FILE
+
 sys.path.insert(0, './ui_src')
+sys.path.insert(1, '../ragnarok_probes/ragnarok_probes/')
+sys.path.insert(2, '../ragnarok_server/ragnarok_server/modules/')
+# IMPORT GUI FILE
 from ui_interface import *
+from netscan import Netscan
+from port_finder import PortFinder
+# IMPORT SCANNER RESOURCES
 ########################################################################
 
 
@@ -77,7 +83,9 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.pushButton_14.clicked.connect(lambda: self.link("https://pypi.org/project/PlugyPy/"))
         self.ui.report_gen_button.clicked.connect(lambda: self.link("http://localhost:8000/report.html"))
         # ###############################################
-
+        # Initiate Report Generator
+        self.ui.generator.clicked.connect(lambda: self.generateReport())
+        # ###############################################
         # Function to Move window on mouse drag event on the tittle bar
         # ###############################################
         def moveWindow(e):
@@ -156,8 +164,26 @@ class MainWindow(QtWidgets.QMainWindow):
         self.clickPosition = event.globalPos()
         # We will use this value to move the window
     #######################################################################
-    #######################################################################
 
+    #######################################################################
+    def generateReport(self):
+        IP = str(self.ui.textEdit.toPlainText())
+        ports = [ p for p in range(21, 81)]
+        value = {
+        "IP":IP,
+        "Open_Ports": PortFinder().main(IP,ports),
+        "Mac_Address":"test",
+        "Vendor":"test",
+        "Background_Process":"test"
+        }
+        jsonString = json.dumps(value)
+        sys.path.insert(3, './web_results')
+        jsonFile = open("results.json", "w")
+        jsonFile.write(jsonString)
+        jsonFile.close()
+
+    #######################################################################
+    #######################################################################
 
 
     #######################################################################
