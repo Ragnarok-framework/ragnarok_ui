@@ -166,6 +166,8 @@ class MainWindow(QtWidgets.QMainWindow):
     #######################################################################
 
     #######################################################################
+    # Generate a report
+    #######################################################################
     def generateReport(self):
         IP = str(self.ui.textEdit.toPlainText())
         ports = [ p for p in range(21, 81)]
@@ -177,12 +179,19 @@ class MainWindow(QtWidgets.QMainWindow):
         "Background_Process":"test"
         }
         jsonString = json.dumps(value)
-        sys.path.insert(3, './web_results')
+        sys.path.insert(3, './web_results/json')
         jsonFile = open("results.json", "w")
         jsonFile.write(jsonString)
         jsonFile.close()
 
-    #######################################################################
+    #######################################################################[
+#      {"IP":"192.168.0.100","Open_Ports":"Port => 80, http","Mac_Address":"67:DA:A9:4B:4F:98","Vendor":"Intel","Background_Process":"Specified not found"},
+#      {"IP":"192.168.0.160","Open_Ports":"Port => 80, http; Port => 22, ssh","Mac_Address":"67:DA:4F:98:4F:98","Vendor":"Intel","Background_Process":"Specified not found"},
+#      {"IP":"192.168.0.109","Open_Ports":"Port => 80, http; Port => 443","Mac_Address":"67:DA:67:DA:4F:98","Vendor":"Intel","Background_Process":"Specified not found"},
+#      {"IP":"192.168.0.111","Open_Ports":"Port => 80, http","Mac_Address":"67:DA:B1:9F:4F:98","Vendor":"Intel","Background_Process":"chrome.exe"},
+#      {"IP":"192.168.0.100","Open_Ports":"Port => 80, http; Port => 22, ssh","Mac_Address":"67:DA:1C:17:4F:98","Vendor":"Cisco Systems, Inc.","Background_Process":"Specified not found"}
+#    ]
+
     #######################################################################
 
 
