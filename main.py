@@ -162,7 +162,6 @@ class MainWindow(QtWidgets.QMainWindow):
         # ###############################################
         # Get the current position of the mouse
         self.clickPosition = event.globalPos()
-        # We will use this value to move the window
     #######################################################################
 
     #######################################################################
@@ -184,17 +183,6 @@ class MainWindow(QtWidgets.QMainWindow):
         jsonFile.write(jsonString)
         jsonFile.close()
 
-    #######################################################################[
-#      {"IP":"192.168.0.100","Open_Ports":"Port => 80, http","Mac_Address":"67:DA:A9:4B:4F:98","Vendor":"Intel","Background_Process":"Specified not found"},
-#      {"IP":"192.168.0.160","Open_Ports":"Port => 80, http; Port => 22, ssh","Mac_Address":"67:DA:4F:98:4F:98","Vendor":"Intel","Background_Process":"Specified not found"},
-#      {"IP":"192.168.0.109","Open_Ports":"Port => 80, http; Port => 443","Mac_Address":"67:DA:67:DA:4F:98","Vendor":"Intel","Background_Process":"Specified not found"},
-#      {"IP":"192.168.0.111","Open_Ports":"Port => 80, http","Mac_Address":"67:DA:B1:9F:4F:98","Vendor":"Intel","Background_Process":"chrome.exe"},
-#      {"IP":"192.168.0.100","Open_Ports":"Port => 80, http; Port => 22, ssh","Mac_Address":"67:DA:1C:17:4F:98","Vendor":"Cisco Systems, Inc.","Background_Process":"Specified not found"}
-#    ]
-
-    #######################################################################
-
-
     #######################################################################
     # Update restore button icon on msximizing or minimizing window
     #######################################################################
@@ -210,7 +198,7 @@ class MainWindow(QtWidgets.QMainWindow):
             self.ui.restore_window_button.setIcon(QtGui.QIcon(u":/icons/icons/minimize-2.svg"))
 
 ########################################################################
-## EXECUTE APP
+## START APP
 ########################################################################
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)

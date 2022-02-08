@@ -1,7 +1,0 @@
-[
-  {"IP":"192.168.0.100","Open_Ports":"Port => 80, http","Mac_Address":"67:DA:A9:4B:4F:98","Vendor":"Intel","Background_Process":"Specified not found"},
-  {"IP":"192.168.0.109","Open_Ports":"Port => 80, http; Port => 443","Mac_Address":"74:5B:67:DA:4F:98","Vendor":"Intel","Background_Process":"Specified not found"},
-  {"IP":"192.168.0.110","Open_Ports":"Port => 80, http","Mac_Address":"21:4F:B1:9F:3C:72","Vendor":"Intel","Background_Process":"chrome.exe"},
-  {"IP":"192.168.0.111","Open_Ports":"Port => 80, http; Port => 22, ssh","Mac_Address":"B6:9D:1C:17:D9:82","Vendor":"Cisco Systems, Inc.","Background_Process":"Specified not found"},
-  {"IP":"192.168.0.160","Open_Ports":"Port => 80, http; Port => 22, ssh","Mac_Address":"6A:DA:4F:98:C9:89","Vendor":"Intel","Background_Process":"Specified not found"}
-]
